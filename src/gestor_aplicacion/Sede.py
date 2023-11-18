@@ -1,6 +1,6 @@
 class Sede:
     def __init__(self, nombre, quirofanos, salas_de_espera, personal, consultorios,
-                 direccion, pacientes, sillas, camas, ambulancias, estado, observaciones):
+                 direccion, pacientes, sillas, camas, ambulancias, observaciones):
         self.nombre = nombre
         self.quirofanos = quirofanos
         self.salas_de_espera = salas_de_espera
@@ -11,5 +11,5 @@ class Sede:
         self.sillas = sillas
         self.camas = camas
         self.ambulancias = ambulancias
-        self.estado = estado
+        self.estado = True
         self.observaciones = observaciones
