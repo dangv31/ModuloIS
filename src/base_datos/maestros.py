@@ -9,7 +9,7 @@ def crear_tabla_maestro(nombre, columnas):
     ruta_base_datos = os.path.join(directorio_script, 'maestros.db')
     conn = sq.connect(ruta_base_datos)
     c = conn.cursor()
-    c.execute(f"CREATE TABLE {nombre}({', '.join(columnas)})")
+    c.execute(f"CREATE TABLE {nombre}(ID INTEGER, {', '.join(columnas)})")
     conn.commit()
     conn.close()
 

@@ -1,4 +1,7 @@
 from src.base_datos.maestros import crear_tabla_maestro
+from src.gestor_aplicacion.Maestro import Maestro
+
+
 class Crear_Maestro:
     @classmethod
     def crear_maestro(cls):
@@ -18,5 +21,5 @@ class Crear_Maestro:
 
             columnas.append(nombre_col + " " + tipo_col)
             i += 1
-
-        crear_tabla_maestro(nombre, columnas)
+        Maestro.lista_maestros.append(Maestro(nombre, columnas))
+        #crear_tabla_maestro(nombre, columnas)
