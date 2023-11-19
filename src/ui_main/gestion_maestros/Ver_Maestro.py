@@ -1,4 +1,4 @@
-from ui_main.gestion_maestros.Buscar_Maestro import buscar_maestro
+from src.ui_main.gestion_maestros.Buscar_Maestro import buscar_maestro
 
 
 class Ver_Maestro:
