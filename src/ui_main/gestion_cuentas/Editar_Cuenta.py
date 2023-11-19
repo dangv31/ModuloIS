@@ -7,7 +7,7 @@ from src.ui_main.gestion_cuentas.Resetear_Contraseña import Resetear_Contraseñ
 class Editar_Cuenta:
     @classmethod
     def editar_cuenta(cls, cuenta):
-        doc = input("Ingrese el numero de documento de la cuenta: ")
+        doc = int(input("Ingrese el numero de documento de la cuenta: "))
         cuenta_e = buscar_cuenta(doc)
         print(cuenta_e.nombres)
         print(cuenta_e.apellidos)
