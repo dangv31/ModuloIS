@@ -4,7 +4,6 @@ class Categoria():
         self.maestro = maestro
         self.estado = True
         self.maestro.categorias.append(self)
-        self.observaciones = []
     def actualizar_info(self, informacion_nueva, indice):
         self.info[indice] = informacion_nueva
 

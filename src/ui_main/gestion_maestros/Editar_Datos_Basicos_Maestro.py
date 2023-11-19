@@ -23,11 +23,11 @@ class Editar_Datos_Basicos_Maestro:
                 columnas = maestro.columnas
                 for index, columna in enumerate(columnas):
                     print(f"{index + 1}.{columna}")
-                index_columna = input("Ingrese el numero del indice de la columna para cambiar el nombre o # para terminar el proceso")
+                index_columna = input("Ingrese el numero del indice de la columna para cambiar el nombre o # para terminar el proceso: ")
                 if index_columna == "#":
                     break
                 index_columna = int(index_columna)
-                nombre_col = input(f"Ingrese el nombre nuevo de la columna {index_columna}")
+                nombre_col = input(f"Ingrese el nombre nuevo de la columna {index_columna}: ")
                 columnas[index_columna - 1] = nombre_col
             Observacion.generar_observacion(cuenta, maestro)
             print("Cambio realizado con exito!")

@@ -7,7 +7,7 @@ class Crear_Maestro:
         nombre = input("Ingrese el nombre del maestro: ")
         i = 1
         columnas = []
-        print("Ingrese el nombre de las columnas, si no desea agregar mas columnas ingrese #")
+        print("Ingrese el nombre de las columnas, si no desea agregar mas columnas ingrese #: ")
         while True:
             nombre_col = input(f"Ingrese el nombre de la columna {i}: ")
             if nombre_col == "#":

@@ -1,4 +1,4 @@
-class Maestro():
+class Maestro:
     lista_maestros = []
     def __init__(self, nombre, columnas):
         self.nombre = nombre

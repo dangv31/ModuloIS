@@ -1,17 +1,23 @@
+from gestor_aplicacion.Maestro import Maestro
 from src.ui_main.Cambiar_Estado import Cambiar_Estado
-from src.ui_main.gestion_maestros.Buscar_Maestro import buscar_maestro
 from src.ui_main.gestion_maestros.Editar_Categorias import Editar_Categorias
 from src.ui_main.gestion_maestros.Editar_Datos_Basicos_Maestro import Editar_Datos_Basicos_Maestro
+from ui_main.gestion_maestros.Buscar_Maestro import buscar_maestro
 
 
 class Editar_Maestro:
     @classmethod
     def editar_maestro(cls, cuenta):
-        nombre = input("Ingrese el nombre del maestro: ")
-        maestro = buscar_maestro(nombre)
-        print(maestro.nombre)
+        nombre_maestro = input("Ingrese el nombre del maestro que desee ver: ")
+        maestro = buscar_maestro(nombre_maestro)
+        print(Maestro.lista_maestros)
+        print(f"Maestro: {maestro.nombre}")
+        print("Columnas:")
         for columna in maestro.columnas:
-            print(columna, end=" ")
+            print(f"|{columna}|", end=" ")
+        print("Categorias:")
+        for categoria in maestro.categorias:
+            print(f"|{categoria}|", end=" ")
         print("")
         print("Elija una de las siguientes opciones:")
         print("1. Editar Datos Basicos")

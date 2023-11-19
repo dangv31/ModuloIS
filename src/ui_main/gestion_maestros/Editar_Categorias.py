@@ -44,6 +44,7 @@ class Editar_Categorias:
                 opcion = int(opcion)
                 categoria_seleccionada = maestro.categorias[opcion-1]
                 Cambiar_Estado.cambiar_estado(categoria_seleccionada, cuenta)
+            Observacion.generar_observacion(cuenta, maestro)
             cls.editar_categorias(maestro, cuenta)
         if opcion == "3":
             informacion = []
