@@ -2,7 +2,7 @@ from src.gestor_aplicacion.Cuenta import Cuenta
 from src.ui_main.gestion_cuentas.Menu_Gestion_Cuentas import Menu_Gestion_Cuentas
 from src.ui_main.gestion_maestros.Menu_Gestion_Maestros import Menu_Gestion_Maestros
 
-cuenta = Cuenta("Diego", "Gracia", 123, "12/08/2003", "dgraciag", "123", "Administrativo")
+cuenta = Cuenta("Diego", "Gracia", 123, "12/08/2003", "dgraciag", "123", "Administrativo", "Medellin")
 class Menu_inicial:
     @classmethod
     def menu_inicial(cls):

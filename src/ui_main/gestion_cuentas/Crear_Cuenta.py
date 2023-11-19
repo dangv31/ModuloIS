@@ -17,15 +17,33 @@ class Crear_Cuenta:
         print("2. Clinico")
         print("3. Administrativo-Clinico")
         opc = input("seleccione el rol que tendra el usuario: ")
-        if opc == 1:
+        if opc == "1":
             rol.append("Administrativo")
-        if opc == 2:
+        if opc == "2":
             rol.append("Clinico")
-        if opc == 3:
+        if opc == "3":
             rol.append("Administrativo")
             rol.append("Clinico")
 
-        Cuenta.lista_cuentas.append(Cuenta(nombre,apellido,doc,nacimiento,correo,contraseña, rol))
+        sede = []
+        print("1. Medellin")
+        print("2. Manizales")
+        print("3. Bogota")
+        print("3. Medellin-Manizales-Bogota")
+
+        opc = input("seleccione la sede en donde estara el usuario: ")
+        if opc == "1":
+            sede.append("Medellin")
+        if opc == "2":
+            sede.append("Manizales")
+        if opc == "3":
+            sede.append("Bogota")
+        if opc == "4":
+            sede.append("Medellin")
+            sede.append("Manizales")
+            sede.append("Bogota")
+
+        Cuenta.lista_cuentas.append(Cuenta(nombre,apellido,doc,nacimiento,correo,contraseña, rol, sede))
         print()
         print("¡Registro exitoso!")
         print()

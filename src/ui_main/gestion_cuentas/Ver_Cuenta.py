@@ -11,11 +11,12 @@ class Ver_Cuenta:
         print("Numero de docmuento:",cuenta.doc)
         print("Fecha de nacimiento:",cuenta.nacimiento)
         print("Correo:",cuenta.correo)
-        print("Rol:",cuenta.rol)
+        print("Rol:", ' '.join(cuenta.rol))
         if cuenta.estado:
             print("Estado: Habilitada")
         else:
             print("Estado: Deshabilitada")
+        print("Sede:", ' '.join(cuenta.sede))
         print()
 
         entrada = input("Ingrese cualquier caracter para volver al menu incial ")
