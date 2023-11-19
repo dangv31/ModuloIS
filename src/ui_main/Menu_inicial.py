@@ -5,8 +5,10 @@ from src.ui_main.gestion_maestros.Menu_Gestion_Maestros import Menu_Gestion_Maes
 from src.ui_main.gestion_sedes.Menu_Gestion_Sede import Menu_Gestion_Sede
 
 cuenta = Cuenta("Diego", "Gracia", 123, "12/08/2003", "dgraciag", "123")
-Cuenta.lista_cuentas.append(cuenta)
+cuenta.rol.append("administrativo")
 sede = Sede("MedPLus Medellin", 100, 100, 100, "Medellin", 100, 100, 100, 100)
+cuenta.sede.append(sede)
+Cuenta.lista_cuentas.append(cuenta)
 Sede.lista_sedes.append(sede)
 class Menu_inicial:
     @classmethod
