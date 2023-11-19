@@ -12,7 +12,8 @@ class Editar_Datos_Basicos_Cuenta:
         print("4. Cambiar fecha de nacimiento")
         print("5. Cambiar correo")
         print("6. Cambiar rol")
-        print("7. Volver al menu inicial")
+        print("7. Cambiar sede")
+        print("8. Volver al menu inicial")
         print()
         opcion = input()
         if opcion == "1":
@@ -69,6 +70,29 @@ class Editar_Datos_Basicos_Cuenta:
             print("Cambio realizado con exito!")
             cls.editar_datos_basicos(cuenta_e, cuenta)
 
-        if opcion == "7":
+        elif opcion == "6":
+            sede = []
+            print("1. Medellin")
+            print("2. Manizales")
+            print("3. Bogota")
+            print("3. Medellin-Manizales-Bogota")
+            opc = input("seleccione la sede en donde estara el usuario: ")
+            if opc == "1":
+                sede.append("Medellin")
+            if opc == "2":
+                sede.append("Manizales")
+            if opc == "3":
+                sede.append("Bogota")
+            if opc == "4":
+                sede.append("Medellin")
+                sede.append("Manizales")
+                sede.append("Bogota")
+
+            cuenta_e.sede = sede
+            Observacion.generar_observacion(cuenta, cuenta_e)
+            print("Cambio realizado con exito!")
+            cls.editar_datos_basicos(cuenta_e, cuenta)
+
+        if opcion == "8":
             from src.ui_main.Menu_inicial import Menu_inicial
             Menu_inicial.menu_inicial()
