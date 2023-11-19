@@ -1,6 +1,4 @@
-from src.gestor_aplicacion.Maestro import Maestro
 from src.ui_main.Cambiar_Estado import Cambiar_Estado
-from src.ui_main.Menu_inicial import Menu_inicial
 from src.ui_main.gestion_maestros.Buscar_Maestro import buscar_maestro
 from src.ui_main.gestion_maestros.Editar_Categorias import Editar_Categorias
 from src.ui_main.gestion_maestros.Editar_Datos_Basicos_Maestro import Editar_Datos_Basicos_Maestro
@@ -13,7 +11,8 @@ class Editar_Maestro:
         maestro = buscar_maestro(nombre)
         print(maestro.nombre)
         for columna in maestro.columnas:
-            print(columna, end="")
+            print(columna, end=" ")
+        print("")
         print("Elija una de las siguientes opciones:")
         print("1. Editar Datos Basicos")
         print("2. Editar Categorias")
@@ -30,4 +29,5 @@ class Editar_Maestro:
         if opcion == "3":
             Cambiar_Estado.cambiar_estado(maestro, cuenta)
         if opcion == "4":
+            from src.ui_main.Menu_inicial import Menu_inicial
             Menu_inicial.menu_inicial()

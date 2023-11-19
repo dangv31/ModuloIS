@@ -1,4 +1,3 @@
-from src.ui_main.Menu_inicial import Menu_inicial
 from src.ui_main.gestion_maestros.Crear_Maestro import Crear_Maestro
 from src.ui_main.gestion_maestros.Editar_Maestro import Editar_Maestro
 from src.ui_main.gestion_maestros.Ver_Maestro import Ver_Maestro
@@ -19,4 +18,5 @@ class Menu_Gestion_Maestros:
         if opcion == "3":
             Ver_Maestro.ver_maestro()
         if opcion == "4":
+            from src.ui_main.Menu_inicial import Menu_inicial
             Menu_inicial.menu_inicial()
