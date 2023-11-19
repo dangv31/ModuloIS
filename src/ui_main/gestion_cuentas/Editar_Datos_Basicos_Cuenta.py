@@ -1,4 +1,5 @@
 from src.gestor_aplicacion.Observacion import Observacion
+from src.gestor_aplicacion.Sede import Sede
 
 
 class Editar_Datos_Basicos_Cuenta:
@@ -52,43 +53,53 @@ class Editar_Datos_Basicos_Cuenta:
             cls.editar_datos_basicos(cuenta_e, cuenta)
 
         elif opcion == "6":
-            rol = []
             print("1. Administrativo")
             print("2. Clinico")
             print("3. Administrativo-Clinico")
             opc = input("seleccione el rol que tendra el usuario: ")
             if opc == "1":
-                rol.append("Administrativo")
+                cuenta_e.rol.append("Administrativo")
             if opc == "2":
-                rol.append("Clinico")
+                cuenta_e.rol.append("Clinico")
             if opc == "3":
-                rol.append("Administrativo")
-                rol.append("Clinico")
+                cuenta_e.rol.append("Administrativo")
+                cuenta_e.rol.append("Clinico")
 
-            cuenta_e.rol = rol
             Observacion.generar_observacion(cuenta, cuenta_e)
             print("Cambio realizado con exito!")
             cls.editar_datos_basicos(cuenta_e, cuenta)
 
         elif opcion == "6":
-            sede = []
+            for sede in Sede.lista_sedes:
+                if cuenta_e in sede.personal:
+                    sede.personal.remove(cuenta_e)
             print("1. Medellin")
             print("2. Manizales")
             print("3. Bogota")
             print("3. Medellin-Manizales-Bogota")
             opc = input("seleccione la sede en donde estara el usuario: ")
-            if opc == "1":
-                sede.append("Medellin")
-            if opc == "2":
-                sede.append("Manizales")
-            if opc == "3":
-                sede.append("Bogota")
-            if opc == "4":
-                sede.append("Medellin")
-                sede.append("Manizales")
-                sede.append("Bogota")
 
-            cuenta_e.sede = sede
+            if opc == "1":
+                for sede in Sede.lista_sedes:
+                    if sede.nombre == "MedPLus Medellin":
+                        cuenta_e.sede.append(sede)
+                        sede.personal.append(cuenta_e)
+
+            if opc == "2":
+                for sede in Sede.lista_sedes:
+                    if sede.nombre == "MedPLus Manizales":
+                        cuenta_e.sede.append(sede)
+                        sede.personal.append(cuenta_e)
+            if opc == "3":
+                for sede in Sede.lista_sedes:
+                    if sede.nombre == "MedPLus Bogota":
+                        cuenta_e.sede.append(sede)
+                        sede.personal.append(cuenta_e)
+            if opc == "4":
+                for sede in Sede.lista_sedes:
+                    cuenta_e.sede.append(sede)
+                    sede.personal.append(cuenta_e)
+
             Observacion.generar_observacion(cuenta, cuenta_e)
             print("Cambio realizado con exito!")
             cls.editar_datos_basicos(cuenta_e, cuenta)

@@ -16,7 +16,7 @@ class Ver_Cuenta:
             print("Estado: Habilitada")
         else:
             print("Estado: Deshabilitada")
-        print("Sede:", ' '.join(cuenta.sede))
+        print("Sede:", ' '.join(cuenta.sede.nombre))
         print()
 
         entrada = input("Ingrese cualquier caracter para volver al menu incial ")

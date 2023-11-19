@@ -1,4 +1,5 @@
 from src.gestor_aplicacion.Cuenta import Cuenta
+from src.gestor_aplicacion.Sede import Sede
 
 
 class Crear_Cuenta:
@@ -8,24 +9,25 @@ class Crear_Cuenta:
         print("Por favor, ingrese la siguiente informacion sobre el usuario a crear: ")
         nombre = input("Nombre: ")
         apellido = input("Apellido: ")
-        doc = input("Numero de documento: ")
+        doc = int(input("Numero de documento: "))
         nacimiento = input("Fecha de nacimiento (DD/MM/AAAA): ")
         correo = input("correo: ")
         contraseña = input("Contraseña: ")
-        rol = []
+
+        cuenta_creada = Cuenta(nombre, apellido, doc, nacimiento, correo, contraseña)
+
         print("1. Administrativo")
         print("2. Clinico")
         print("3. Administrativo-Clinico")
         opc = input("seleccione el rol que tendra el usuario: ")
         if opc == "1":
-            rol.append("Administrativo")
+            cuenta_creada.rol.append("Administrativo")
         if opc == "2":
-            rol.append("Clinico")
+            cuenta_creada.rol.append("Clinico")
         if opc == "3":
-            rol.append("Administrativo")
-            rol.append("Clinico")
+            cuenta_creada.rol.append("Administrativo")
+            cuenta_creada.rol.append("Clinico")
 
-        sede = []
         print("1. Medellin")
         print("2. Manizales")
         print("3. Bogota")
@@ -33,17 +35,27 @@ class Crear_Cuenta:
 
         opc = input("seleccione la sede en donde estara el usuario: ")
         if opc == "1":
-            sede.append("Medellin")
-        if opc == "2":
-            sede.append("Manizales")
-        if opc == "3":
-            sede.append("Bogota")
-        if opc == "4":
-            sede.append("Medellin")
-            sede.append("Manizales")
-            sede.append("Bogota")
+            for sede in Sede.lista_sedes:
+                if sede.nombre == "MedPLus Medellin":
+                    cuenta_creada.sede.append(sede)
+                    sede.personal.append(cuenta_creada)
 
-        Cuenta.lista_cuentas.append(Cuenta(nombre,apellido,doc,nacimiento,correo,contraseña, rol, sede))
+        if opc == "2":
+            for sede in Sede.lista_sedes:
+                if sede.nombre == "MedPLus Manizales":
+                    cuenta_creada.sede.append(sede)
+                    sede.personal.append(cuenta_creada)
+        if opc == "3":
+            for sede in Sede.lista_sedes:
+                if sede.nombre == "MedPLus Bogota":
+                    cuenta_creada.sede.append(sede)
+                    sede.personal.append(cuenta_creada)
+        if opc == "4":
+            for sede in Sede.lista_sedes:
+                cuenta_creada.sede.append(sede)
+                sede.personal.append(cuenta_creada)
+
+        Cuenta.lista_cuentas.append(cuenta_creada)
         print()
         print("¡Registro exitoso!")
         print()
