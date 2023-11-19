@@ -1,6 +1,6 @@
-from gestor_aplicacion.Categoria import Categoria
-from gestor_aplicacion.Observacion import Observacion
-from ui_main.Cambiar_Estado import Cambiar_Estado
+from src.gestor_aplicacion.Categoria import Categoria
+from src.gestor_aplicacion.Observacion import Observacion
+from src.ui_main.Cambiar_Estado import Cambiar_Estado
 
 
 class Editar_Categorias:
@@ -54,5 +54,5 @@ class Editar_Categorias:
             Categoria(informacion, maestro)
             cls.editar_categorias(maestro, cuenta)
         if opcion == "4":
-            from ui_main.Menu_inicial import Menu_inicial
+            from src.ui_main.Menu_inicial import Menu_inicial
             Menu_inicial.menu_inicial()

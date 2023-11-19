@@ -1,4 +1,4 @@
-from gestor_aplicacion.Observacion import Observacion
+from src.gestor_aplicacion.Observacion import Observacion
 
 
 class Cambiar_Estado:

@@ -15,5 +15,5 @@ class Crear_Maestro:
             columnas.append(nombre_col)
             i += 1
         Maestro.lista_maestros.append(Maestro(nombre, columnas))
-        from ui_main.Menu_inicial import Menu_inicial
+        from src.ui_main.Menu_inicial import Menu_inicial
         Menu_inicial.menu_inicial()

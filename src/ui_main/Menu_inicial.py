@@ -1,5 +1,5 @@
-from gestor_aplicacion.Cuenta import Cuenta
-from ui_main.gestion_maestros.Menu_Gestion_Maestros import Menu_Gestion_Maestros
+from src.gestor_aplicacion.Cuenta import Cuenta
+from src.ui_main.gestion_maestros.Menu_Gestion_Maestros import Menu_Gestion_Maestros
 
 cuenta = Cuenta("Daniel", "Giraldo", 123)
 class Menu_inicial:
