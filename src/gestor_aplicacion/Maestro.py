@@ -1,3 +1,4 @@
+import sqlite3 as sq
 class Maestro:
     lista_maestros = []
     def __init__(self, nombre, columnas):
@@ -6,3 +7,5 @@ class Maestro:
         self.categorias = []
         self.observaciones = []
         self.estado = True
+
+

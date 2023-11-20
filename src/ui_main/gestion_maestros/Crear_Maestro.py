@@ -1,3 +1,4 @@
+from src.base_datos.Gestor_Base import Gestor_Base
 from src.gestor_aplicacion.Maestro import Maestro
 
 
@@ -14,6 +15,6 @@ class Crear_Maestro:
                 break
             columnas.append(nombre_col)
             i += 1
-        Maestro.lista_maestros.append(Maestro(nombre, columnas))
+        Gestor_Base.guardar_maestro(Maestro(nombre, columnas))
         from src.ui_main.Menu_inicial import Menu_inicial
-        Menu_inicial.menu_inicial_Administrativo()
+        return Menu_inicial.menu_inicial_Administrativo()
