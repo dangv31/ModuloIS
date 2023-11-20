@@ -1,5 +1,6 @@
 from src.ui_main.gestion_maestros.Crear_Maestro import Crear_Maestro
 from src.ui_main.gestion_maestros.Editar_Maestro import Editar_Maestro
+from src.ui_main.gestion_maestros.Ver_Lista_Maestros import Ver_Lista_Maestros
 from src.ui_main.gestion_maestros.Ver_Maestro import Ver_Maestro
 
 
@@ -9,7 +10,8 @@ class Menu_Gestion_Maestros:
         print("1. Crear Maestro")
         print("2. Editar Maestro")
         print("3. Ver Maestro")
-        print("4. Volver al menu principal")
+        print("4. Ver Lista de Maestros")
+        print("5. Volver al menu principal")
         opcion = input("Seleccione una opcion: ")
         if opcion == "1":
             Crear_Maestro.crear_maestro()
@@ -18,5 +20,7 @@ class Menu_Gestion_Maestros:
         if opcion == "3":
             Ver_Maestro.ver_maestro(cuenta)
         if opcion == "4":
+            Ver_Lista_Maestros.ver_lista_maestros(cuenta)
+        if opcion == "5":
             from src.ui_main.Menu_inicial import Menu_inicial
             Menu_inicial.menu_inicial_Administrativo()
