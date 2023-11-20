@@ -69,7 +69,7 @@ class Editar_Datos_Basicos_Cuenta:
             print("Cambio realizado con exito!")
             cls.editar_datos_basicos(cuenta_e, cuenta)
 
-        elif opcion == "6":
+        elif opcion == "7":
             for sede in Sede.lista_sedes:
                 if cuenta_e in sede.personal:
                     sede.personal.remove(cuenta_e)
@@ -106,4 +106,4 @@ class Editar_Datos_Basicos_Cuenta:
 
         if opcion == "8":
             from src.ui_main.Menu_inicial import Menu_inicial
-            Menu_inicial.menu_inicial()
+            Menu_inicial.menu_inicial_Administrativo()

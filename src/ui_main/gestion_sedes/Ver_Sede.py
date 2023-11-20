@@ -13,4 +13,7 @@ class Ver_Sede:
         entrada = input("Ingrese cualquier caracter para volver al menu incial: ")
         if entrada:
             from src.ui_main.Menu_inicial import Menu_inicial
-            Menu_inicial.menu_inicial()
+            if "Administrativo" in cuenta.rol:
+                Menu_inicial.menu_inicial_Administrativo()
+            else:
+                Menu_inicial.menu_inicial_Clinico()

@@ -16,7 +16,7 @@ class Menu_Gestion_Maestros:
         if opcion == "2":
             Editar_Maestro.editar_maestro(cuenta)
         if opcion == "3":
-            Ver_Maestro.ver_maestro()
+            Ver_Maestro.ver_maestro(cuenta)
         if opcion == "4":
             from src.ui_main.Menu_inicial import Menu_inicial
-            Menu_inicial.menu_inicial()
+            Menu_inicial.menu_inicial_Administrativo()

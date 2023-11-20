@@ -13,4 +13,4 @@ class Resetear_Contraseña:
             print("Cambio realizado con exito!")
 
         from src.ui_main.Menu_inicial import Menu_inicial
-        Menu_inicial.menu_inicial()
+        Menu_inicial.menu_inicial_Administrativo()

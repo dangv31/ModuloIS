@@ -29,4 +29,4 @@ class Ver_Cuenta:
         entrada = input("Ingrese cualquier caracter para volver al menu incial ")
         if entrada:
             from src.ui_main.Menu_inicial import Menu_inicial
-            Menu_inicial.menu_inicial()
+            Menu_inicial.menu_inicial_Administrativo()

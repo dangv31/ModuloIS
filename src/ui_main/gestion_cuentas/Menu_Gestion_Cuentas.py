@@ -12,11 +12,11 @@ class Menu_Gestion_Cuentas:
         print("4. Volver al menu principal")
         opcion = input("Seleccione una opcion: ")
         if opcion == "1":
-            Crear_Cuenta.crear_cuenta()
+            Crear_Cuenta.crear_cuenta(cuenta)
         if opcion == "2":
             Editar_Cuenta.editar_cuenta(cuenta)
         if opcion == "3":
             Ver_Cuenta.ver_cuenta()
         if opcion == "4":
             from src.ui_main.Menu_inicial import Menu_inicial
-            Menu_inicial.menu_inicial()
+            Menu_inicial.menu_inicial_Administrativo()

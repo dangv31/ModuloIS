@@ -31,4 +31,4 @@ class Editar_Cuenta:
             Cambiar_Estado.cambiar_estado(cuenta_e, cuenta)
         if opcion == "4":
             from src.ui_main.Menu_inicial import Menu_inicial
-            Menu_inicial.menu_inicial()
+            Menu_inicial.menu_inicial_Administrativo()
