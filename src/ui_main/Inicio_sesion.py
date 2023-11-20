@@ -12,8 +12,8 @@ class Inicio_sesion:
             cuenta_encontrada = None
             lista_cuentas = Gestor_Base.lista_cuentas()
 
-            for cuenta in lista_cuentas:
-                if cuenta.correo == correo_ingresado and cuenta.contraseña == contrasena_ingresada:
+            for id, cuenta in lista_cuentas:
+                if cuenta.correo == correo_ingresado and cuenta.contrasena == contrasena_ingresada:
                     cuenta_encontrada = cuenta
                     break
 

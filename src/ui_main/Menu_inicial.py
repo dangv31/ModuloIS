@@ -1,3 +1,4 @@
+from src.base_datos.Gestor_Base import Gestor_Base
 from src.gestor_aplicacion.Cuenta import Cuenta
 from src.gestor_aplicacion.Sede import Sede
 from src.ui_main.gestion_cuentas.Menu_Gestion_Cuentas import Menu_Gestion_Cuentas
@@ -13,15 +14,12 @@ cuenta.rol.append("Administrativo")
 cuenta2 = Cuenta("Daniel", "Giraldo", 111, "12/08/2003", "dgiraldo", "111")
 cuenta2.rol.append("Clinico")
 sede = Sede("MedPLus Medellin", 100, 100, 100, "Medellin", 100, 100, 100, 100)
-sede2 = Sede("MedPLus Manizales", 100, 100, 100, "Medellin", 100, 100, 100, 100)
-sede3 = Sede("MedPLus Bogota", 100, 100, 100, "Medellin", 100, 100, 100, 100)
+sede2 = Sede("MedPLus Manizales", 100, 100, 100, "Manizales", 100, 100, 100, 100)
+sede3 = Sede("MedPLus Bogota", 100, 100, 100, "Bogota", 100, 100, 100, 100)
 cuenta.sede.append(sede)
 cuenta2.sede.append(sede2)
-Cuenta.lista_cuentas.append(cuenta)
-Cuenta.lista_cuentas.append(cuenta2)
-Sede.lista_sedes.append(sede)
-Sede.lista_sedes.append(sede2)
-Sede.lista_sedes.append(sede3)
+Gestor_Base.guardar_objeto(cuenta2)
+
 class Menu_inicial:
     @classmethod
     def menu_inicial_Administrativo(cls, cuenta):
