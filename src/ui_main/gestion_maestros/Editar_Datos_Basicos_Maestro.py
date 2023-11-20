@@ -1,9 +1,10 @@
+from src.base_datos.Gestor_Base import Gestor_Base
 from src.gestor_aplicacion.Observacion import Observacion
 
 
 class Editar_Datos_Basicos_Maestro:
     @classmethod
-    def editar_datos_basicos(cls, maestro, cuenta):
+    def editar_datos_basicos(cls, maestro, cuenta, id):
         print(maestro.nombre)
         for index, columna in enumerate(maestro.columnas):
             print(f"{index+1}.{columna}")
@@ -16,8 +17,9 @@ class Editar_Datos_Basicos_Maestro:
             nombre_nuevo = input("Ingrese el nombre nuevo: ")
             maestro.nombre = nombre_nuevo
             Observacion.generar_observacion(cuenta, maestro)
+            Gestor_Base.actualizar_maestro(maestro, id)
             print("Cambio realizado con exito!")
-            cls.editar_datos_basicos(maestro, cuenta)
+            return cls.editar_datos_basicos(maestro, cuenta, id)
         if opcion == "2":
             while True:
                 columnas = maestro.columnas
@@ -30,8 +32,9 @@ class Editar_Datos_Basicos_Maestro:
                 nombre_col = input(f"Ingrese el nombre nuevo de la columna {index_columna}: ")
                 columnas[index_columna - 1] = nombre_col
             Observacion.generar_observacion(cuenta, maestro)
+            Gestor_Base.actualizar_maestro(maestro, id)
             print("Cambio realizado con exito!")
-            cls.editar_datos_basicos(maestro, cuenta)
+            return cls.editar_datos_basicos(maestro, cuenta, id)
         if opcion == "3":
             from src.ui_main.Menu_inicial import Menu_inicial
-            Menu_inicial.menu_inicial_Administrativo()
+            return Menu_inicial.menu_inicial_Administrativo()

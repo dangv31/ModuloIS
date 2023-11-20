@@ -1,3 +1,6 @@
+from src.gestor_aplicacion.Categoria import Categoria
+
+
 class Observacion:
     def __init__(self, cuenta, detalle):
         self.cuenta = cuenta
@@ -9,5 +12,8 @@ class Observacion:
     @classmethod
     def generar_observacion(cls, cuenta, objeto):
         detalle = input("Ingrese el motivo de los cambios:")
-        objeto.observaciones.append(Observacion(cuenta, detalle))
+        if isinstance(objeto, Categoria):
+            objeto.maestro.observaciones.append(Observacion(cuenta, detalle))
+        else:
+            objeto.observaciones.append(Observacion(cuenta, detalle))
         print("Observacion Registrada!")

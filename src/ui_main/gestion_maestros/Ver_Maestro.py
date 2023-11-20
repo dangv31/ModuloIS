@@ -1,11 +1,11 @@
-from src.ui_main.gestion_maestros.Buscar_Maestro import buscar_maestro
+from src.base_datos.Gestor_Base import Gestor_Base
 
 
 class Ver_Maestro:
     @classmethod
     def ver_maestro(cls, cuenta):
         nombre_maestro = input("Ingrese el nombre del maestro que desee ver: ")
-        maestro = buscar_maestro(nombre_maestro)
+        id, maestro = Gestor_Base.buscar_maestro(nombre_maestro)
         print(f"Nombre: {maestro.nombre}")
         print("Columnas: ")
         for columna in maestro.columnas:
@@ -21,6 +21,6 @@ class Ver_Maestro:
         if entrada:
             from src.ui_main.Menu_inicial import Menu_inicial
             if "Administrativo" in cuenta.rol:
-                Menu_inicial.menu_inicial_Administrativo()
+                return Menu_inicial.menu_inicial_Administrativo()
             else:
-                Menu_inicial.menu_inicial_Clinico()
+                return Menu_inicial.menu_inicial_Clinico()

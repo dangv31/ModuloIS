@@ -1,4 +1,4 @@
-from src.gestor_aplicacion.Cuenta import Cuenta
+from src.base_datos.Gestor_Base import Gestor_Base
 from src.gestor_aplicacion.Maestro import Maestro
 
 
@@ -6,9 +6,10 @@ class Ver_Lista_Maestros:
     @classmethod
     def ver_lista_maestros(cls, cuenta):
         indice = 1
-        for maestro in Maestro.lista_maestros:
+        lista_maestros = Gestor_Base.lista_maestros()
+        for ID, maestro in lista_maestros:
             print()
-            print(f"Maestro {indice}:")
+            print(f"ID:{ID} - Maestro {indice}:")
             print(f"Nombre: {maestro.nombre}")
             print("Columnas: ")
             for columna in maestro.columnas:
