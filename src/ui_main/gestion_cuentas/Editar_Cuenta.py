@@ -1,3 +1,4 @@
+from src.base_datos.Gestor_Base import Gestor_Base
 from src.ui_main.Cambiar_Estado import Cambiar_Estado
 from src.ui_main.gestion_cuentas.Buscar_Cuenta import buscar_cuenta
 from src.ui_main.gestion_cuentas.Editar_Datos_Basicos_Cuenta import Editar_Datos_Basicos_Cuenta
@@ -8,7 +9,7 @@ class Editar_Cuenta:
     @classmethod
     def editar_cuenta(cls, cuenta):
         doc = int(input("Ingrese el numero de documento de la cuenta: "))
-        cuenta_e = buscar_cuenta(doc)
+        id, cuenta_e = Gestor_Base.buscar_objeto(doc, "Cuenta")
         print(cuenta_e.nombres)
         print(cuenta_e.apellidos)
         print(cuenta_e.doc)
@@ -24,11 +25,11 @@ class Editar_Cuenta:
         print("4. Volver al menú principal")
         opcion = input()
         if opcion == "1":
-            Editar_Datos_Basicos_Cuenta.editar_datos_basicos(cuenta_e, cuenta)
+            Editar_Datos_Basicos_Cuenta.editar_datos_basicos(cuenta_e, cuenta, id)
         if opcion == "2":
-            Resetear_Contraseña.resetear_contraseña(cuenta_e, cuenta)
+            Resetear_Contraseña.resetear_contraseña(cuenta_e, cuenta, id)
         if opcion == "3":
-            Cambiar_Estado.cambiar_estado(cuenta_e, cuenta)
+            Cambiar_Estado.cambiar_estado(cuenta_e, cuenta, id)
         if opcion == "4":
             from src.ui_main.Menu_inicial import Menu_inicial
             Menu_inicial.menu_inicial_Administrativo()

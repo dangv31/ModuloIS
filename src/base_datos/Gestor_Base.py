@@ -41,7 +41,7 @@ class Gestor_Base:
             conn.close()
             return
     @classmethod
-    def buscar_objeto(cls, nombre, clase):
+    def buscar_objeto(cls, busqueda, clase):
         directorio = os.path.dirname(os.path.abspath(__file__))
         if clase == "Maestro":
             ruta_base_datos = os.path.join(directorio, 'maestros.db')
@@ -51,7 +51,7 @@ class Gestor_Base:
             lista_maestros = c.fetchall()
             for ID, maestro in lista_maestros:
                 maestro = pickle.loads(maestro)
-                if maestro.nombre == nombre:
+                if maestro.nombre == busqueda:
                     return ID, maestro
             return None
         elif clase == "Sede":
@@ -62,7 +62,7 @@ class Gestor_Base:
             lista_sedes = c.fetchall()
             for ID, sede in lista_sedes:
                 sede = pickle.loads(sede)
-                if sede.nombre == nombre:
+                if sede.nombre == busqueda:
                     return ID, sede
             return None
         elif clase == "Cuenta":
@@ -73,7 +73,7 @@ class Gestor_Base:
             lista_cuentas = c.fetchall()
             for ID, cuenta in lista_cuentas:
                 cuenta = pickle.loads(cuenta)
-                if cuenta.doc == ID:
+                if cuenta.doc == busqueda:
                     return ID, cuenta
             return None
     @classmethod
@@ -95,7 +95,7 @@ class Gestor_Base:
             c.execute("UPDATE sedes SET Sede = ? WHERE ID = ?", (objeto, id))
             conn.commit()
             conn.close()
-        if isinstance(objeto, Maestro):
+        if isinstance(objeto, Cuenta):
             ruta_base_datos = os.path.join(directorio, 'cuentas.db')
             conn = sqlite3.connect(ruta_base_datos)
             c = conn.cursor()

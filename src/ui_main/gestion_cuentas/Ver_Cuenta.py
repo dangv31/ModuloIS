@@ -1,3 +1,4 @@
+from src.base_datos.Gestor_Base import Gestor_Base
 from src.ui_main.gestion_cuentas.Buscar_Cuenta import buscar_cuenta
 
 
@@ -5,7 +6,7 @@ class Ver_Cuenta:
     @classmethod
     def ver_cuenta(cls):
         doc = int(input("Ingrese el numero de documento de la cuenta que desea ver: "))
-        cuenta = buscar_cuenta(doc)
+        id, cuenta = Gestor_Base.buscar_objeto(doc, "Cuenta")
         print("Nombre:", cuenta.nombres)
         print("Apellido:",cuenta.apellidos)
         print("Numero de docmuento:",cuenta.doc)

@@ -1,3 +1,4 @@
+from src.base_datos.Gestor_Base import Gestor_Base
 from src.gestor_aplicacion.Cuenta import Cuenta
 from src.gestor_aplicacion.Sede import Sede
 
@@ -84,7 +85,7 @@ class Crear_Cuenta:
                     from src.ui_main.Menu_inicial import Menu_inicial
                     Menu_inicial.menu_inicial_Administrativo()
 
-        Cuenta.lista_cuentas.append(cuenta_creada)
+        Gestor_Base.guardar_objeto(cuenta_creada)
         print()
         print("¡Registro exitoso!")
         print()
