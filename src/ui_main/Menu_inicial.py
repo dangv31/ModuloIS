@@ -22,7 +22,7 @@ Sede.lista_sedes.append(sede2)
 Sede.lista_sedes.append(sede3)
 class Menu_inicial:
     @classmethod
-    def menu_inicial_Administrativo(cls):
+    def menu_inicial_Administrativo(cls, cuenta):
         while True:
             print()
             print("1. Gestionar Cuentas")
@@ -45,7 +45,7 @@ class Menu_inicial:
                 print("Opción no válida. Por favor, seleccione una opción válida.")
 
     @classmethod
-    def menu_inicial_Clinico(cls):
+    def menu_inicial_Clinico(cls, cuenta):
         while True:
             print()
             print("1. Ver Maestro")

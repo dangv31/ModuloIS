@@ -1,3 +1,4 @@
+from src.base_datos.Gestor_Base import Gestor_Base
 from src.gestor_aplicacion.Cuenta import Cuenta
 from src.ui_main.Menu_inicial import Menu_inicial
 
@@ -10,8 +11,9 @@ class Inicio_sesion:
             contraseña_ingresada = input("Ingrese su contraseña: ")
 
             cuenta_encontrada = None
+            lista_cuentas = Gestor_Base.lista_cuentas()
 
-            for cuenta in Cuenta.lista_cuentas:
+            for cuenta in lista_cuentas:
                 if cuenta.correo == correo_ingresado and cuenta.contraseña == contraseña_ingresada:
                     cuenta_encontrada = cuenta
                     break
@@ -20,11 +22,11 @@ class Inicio_sesion:
                 if "Administrativo" in cuenta_encontrada.rol:
                     print()
                     print(f"¡Bienvenido {cuenta_encontrada.nombres}!")
-                    Menu_inicial.menu_inicial_Administrativo()
+                    Menu_inicial.menu_inicial_Administrativo(cuenta_encontrada)
                 else:
                     print()
                     print(f"¡Bienvenido {cuenta_encontrada.nombres}!")
-                    Menu_inicial.menu_inicial_Clinico()
+                    Menu_inicial.menu_inicial_Clinico(cuenta_encontrada)
                 break
             else:
                 print()

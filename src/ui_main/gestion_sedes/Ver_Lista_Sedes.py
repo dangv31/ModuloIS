@@ -1,3 +1,4 @@
+from src.base_datos.Gestor_Base import Gestor_Base
 from src.gestor_aplicacion.Sede import Sede
 
 
@@ -5,7 +6,8 @@ class Ver_Lista_Sedes:
     @classmethod
     def ver_lista_sedes(cls, cuenta):
         indice = 1
-        for sede in Sede.lista_sedes:
+        lista_sedes = Gestor_Base.lista_sedes()
+        for id, sede in lista_sedes:
             print()
             print(f"Sede {indice}:")
             sede.imprimir_info()

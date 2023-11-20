@@ -1,5 +1,4 @@
 from src.base_datos.Gestor_Base import Gestor_Base
-from src.ui_main.gestion_cuentas.Buscar_Cuenta import buscar_cuenta
 
 
 class Ver_Cuenta:

@@ -129,7 +129,7 @@ class Gestor_Base:
         return cuentas_deserializados
 
     @classmethod
-    def lista_cuentas(cls):
+    def lista_sedes(cls):
         directorio = os.path.dirname(os.path.abspath(__file__))
         ruta_base_datos = os.path.join(directorio, 'sedes.db')
         conn = sqlite3.connect(ruta_base_datos)

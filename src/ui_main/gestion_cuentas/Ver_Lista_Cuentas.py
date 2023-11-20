@@ -1,3 +1,4 @@
+from src.base_datos.Gestor_Base import Gestor_Base
 from src.gestor_aplicacion.Cuenta import Cuenta
 
 
@@ -5,7 +6,8 @@ class Ver_Lista_Cuentas:
     @classmethod
     def ver_lista_cuentas(cls):
         indice = 1
-        for cuenta in Cuenta.lista_cuentas:
+        lista_cuentas = Gestor_Base.lista_cuentas()
+        for id, cuenta in lista_cuentas:
             print()
             print(f"Cuenta {indice}:")
             print("Nombre:", cuenta.nombres)

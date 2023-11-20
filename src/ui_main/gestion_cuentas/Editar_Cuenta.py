@@ -1,6 +1,5 @@
 from src.base_datos.Gestor_Base import Gestor_Base
 from src.ui_main.Cambiar_Estado import Cambiar_Estado
-from src.ui_main.gestion_cuentas.Buscar_Cuenta import buscar_cuenta
 from src.ui_main.gestion_cuentas.Editar_Datos_Basicos_Cuenta import Editar_Datos_Basicos_Cuenta
 from src.ui_main.gestion_cuentas.Resetear_Contraseña import Resetear_Contraseña
 

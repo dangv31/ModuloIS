@@ -1,12 +1,13 @@
+from src.base_datos.Gestor_Base import Gestor_Base
 from src.gestor_aplicacion.Observacion import Observacion
 from src.ui_main.Cambiar_Estado import Cambiar_Estado
-from src.ui_main.gestion_sedes.Buscar_Sede import buscar_sede
 
 
 class Editar_Sede:
     @classmethod
     def editar_sede(cls, cuenta):
-        sede = buscar_sede()
+        nombre_sede = input("Ingrese el nombre de la sede: ")
+        id, sede = Gestor_Base.buscar_objeto(nombre_sede, "Sede")
         sede.imprimir_info()
         print("1. Actualizar datos basicos")
         if sede.estado:
@@ -37,10 +38,11 @@ class Editar_Sede:
                     sede.ambulancias = int(input("Ingrese la nueva cantidad de ambulancias de la sede: "))
                 if opcion_actualizar == "#":
                     Observacion.generar_observacion(cuenta, sede)
+                    Gestor_Base.actualizar_objeto(sede, id)
                     print("Cambios realizados con exito!")
                     cls.editar_sede(cuenta)
         if opcion == "2":
-            Cambiar_Estado.cambiar_estado(sede, cuenta)
+            Cambiar_Estado.cambiar_estado(sede, cuenta, id)
             cls.editar_sede(cuenta)
         if opcion == "3":
             from src.ui_main.Menu_inicial import Menu_inicial
