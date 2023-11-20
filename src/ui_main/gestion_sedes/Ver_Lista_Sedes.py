@@ -1,5 +1,4 @@
 from src.base_datos.Gestor_Base import Gestor_Base
-from src.gestor_aplicacion.Sede import Sede
 
 
 class Ver_Lista_Sedes:
@@ -18,6 +17,6 @@ class Ver_Lista_Sedes:
         if entrada:
             from src.ui_main.Menu_inicial import Menu_inicial
             if "Administrativo" in cuenta.rol:
-                Menu_inicial.menu_inicial_Administrativo()
+                Menu_inicial.menu_inicial_Administrativo(cuenta)
             else:
-                Menu_inicial.menu_inicial_Clinico()
+                Menu_inicial.menu_inicial_Clinico(cuenta)

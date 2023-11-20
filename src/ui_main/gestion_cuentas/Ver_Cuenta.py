@@ -3,7 +3,7 @@ from src.base_datos.Gestor_Base import Gestor_Base
 
 class Ver_Cuenta:
     @classmethod
-    def ver_cuenta(cls):
+    def ver_cuenta(cls, cuenta_principal):
         doc = int(input("Ingrese el numero de documento de la cuenta que desea ver: "))
         id, cuenta = Gestor_Base.buscar_objeto(doc, "Cuenta")
         print("Nombre:", cuenta.nombres)
@@ -29,4 +29,4 @@ class Ver_Cuenta:
         entrada = input("Ingrese cualquier caracter para volver al menu incial ")
         if entrada:
             from src.ui_main.Menu_inicial import Menu_inicial
-            Menu_inicial.menu_inicial_Administrativo()
+            Menu_inicial.menu_inicial_Administrativo(cuenta_principal)

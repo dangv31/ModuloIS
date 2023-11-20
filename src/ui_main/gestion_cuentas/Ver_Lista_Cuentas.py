@@ -1,10 +1,9 @@
 from src.base_datos.Gestor_Base import Gestor_Base
-from src.gestor_aplicacion.Cuenta import Cuenta
 
 
 class Ver_Lista_Cuentas:
     @classmethod
-    def ver_lista_cuentas(cls):
+    def ver_lista_cuentas(cls, cuenta_principal):
         indice = 1
         lista_cuentas = Gestor_Base.lista_cuentas()
         for id, cuenta in lista_cuentas:
@@ -31,4 +30,4 @@ class Ver_Lista_Cuentas:
         entrada = input("Ingrese cualquier caracter para volver al menu incial ")
         if entrada:
             from src.ui_main.Menu_inicial import Menu_inicial
-            Menu_inicial.menu_inicial_Administrativo()
+            Menu_inicial.menu_inicial_Administrativo(cuenta_principal)

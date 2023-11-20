@@ -21,6 +21,6 @@ class Ver_Maestro:
         if entrada:
             from src.ui_main.Menu_inicial import Menu_inicial
             if "Administrativo" in cuenta.rol:
-                return Menu_inicial.menu_inicial_Administrativo()
+                return Menu_inicial.menu_inicial_Administrativo(cuenta)
             else:
-                return Menu_inicial.menu_inicial_Clinico()
+                return Menu_inicial.menu_inicial_Clinico(cuenta)

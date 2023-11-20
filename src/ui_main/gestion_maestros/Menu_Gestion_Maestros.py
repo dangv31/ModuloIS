@@ -14,7 +14,7 @@ class Menu_Gestion_Maestros:
         print("5. Volver al menu principal")
         opcion = input("Seleccione una opcion: ")
         if opcion == "1":
-            Crear_Maestro.crear_maestro()
+            Crear_Maestro.crear_maestro(cuenta)
         if opcion == "2":
             Editar_Maestro.editar_maestro(cuenta)
         if opcion == "3":
@@ -23,4 +23,4 @@ class Menu_Gestion_Maestros:
             Ver_Lista_Maestros.ver_lista_maestros(cuenta)
         if opcion == "5":
             from src.ui_main.Menu_inicial import Menu_inicial
-            Menu_inicial.menu_inicial_Administrativo()
+            Menu_inicial.menu_inicial_Administrativo(cuenta)

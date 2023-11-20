@@ -19,4 +19,4 @@ class Menu_Gestion_Sede:
             Ver_Lista_Sedes.ver_lista_sedes(cuenta)
         if opcion == "4":
             from src.ui_main.Menu_inicial import Menu_inicial
-            Menu_inicial.menu_inicial_Administrativo()
+            Menu_inicial.menu_inicial_Administrativo(cuenta)

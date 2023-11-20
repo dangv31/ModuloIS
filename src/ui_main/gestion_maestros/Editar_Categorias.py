@@ -61,4 +61,4 @@ class Editar_Categorias:
             return cls.editar_categorias(maestro, cuenta, id)
         if opcion == "4":
             from src.ui_main.Menu_inicial import Menu_inicial
-            return Menu_inicial.menu_inicial_Administrativo()
+            return Menu_inicial.menu_inicial_Administrativo(cuenta)

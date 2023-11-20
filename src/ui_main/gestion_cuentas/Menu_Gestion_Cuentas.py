@@ -18,9 +18,9 @@ class Menu_Gestion_Cuentas:
         if opcion == "2":
             Editar_Cuenta.editar_cuenta(cuenta)
         if opcion == "3":
-            Ver_Cuenta.ver_cuenta()
+            Ver_Cuenta.ver_cuenta(cuenta)
         if opcion == "4":
-            Ver_Lista_Cuentas.ver_lista_cuentas()
+            Ver_Lista_Cuentas.ver_lista_cuentas(cuenta)
         if opcion == "5":
             from src.ui_main.Menu_inicial import Menu_inicial
-            Menu_inicial.menu_inicial_Administrativo()
+            Menu_inicial.menu_inicial_Administrativo(cuenta)

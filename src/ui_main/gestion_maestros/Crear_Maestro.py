@@ -4,7 +4,7 @@ from src.gestor_aplicacion.Maestro import Maestro
 
 class Crear_Maestro:
     @classmethod
-    def crear_maestro(cls):
+    def crear_maestro(cls, cuenta):
         nombre = input("Ingrese el nombre del maestro: ")
         i = 1
         columnas = []
@@ -17,4 +17,4 @@ class Crear_Maestro:
             i += 1
         Gestor_Base.guardar_objeto(Maestro(nombre, columnas))
         from src.ui_main.Menu_inicial import Menu_inicial
-        return Menu_inicial.menu_inicial_Administrativo()
+        return Menu_inicial.menu_inicial_Administrativo(cuenta)

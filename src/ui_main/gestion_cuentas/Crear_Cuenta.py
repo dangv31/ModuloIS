@@ -13,9 +13,9 @@ class Crear_Cuenta:
         doc = int(input("Numero de documento: "))
         nacimiento = input("Fecha de nacimiento (DD/MM/AAAA): ")
         correo = input("correo: ")
-        contraseña = input("Contraseña: ")
+        contrasena = input("Contraseña: ")
 
-        cuenta_creada = Cuenta(nombre, apellido, doc, nacimiento, correo, contraseña)
+        cuenta_creada = Cuenta(nombre, apellido, doc, nacimiento, correo, contrasena)
 
         print("1. Administrativo")
         print("2. Clinico")
@@ -32,7 +32,7 @@ class Crear_Cuenta:
             print("no tienes permiso para crear una cuenta con este rol")
             print()
             from src.ui_main.Menu_inicial import Menu_inicial
-            Menu_inicial.menu_inicial_Administrativo()
+            Menu_inicial.menu_inicial_Administrativo(cuenta)
 
         print("1. Medellin")
         print("2. Manizales")
@@ -50,7 +50,7 @@ class Crear_Cuenta:
                         print("no tienes permiso para crear una cuenta en esta sede")
                         print()
                         from src.ui_main.Menu_inicial import Menu_inicial
-                        Menu_inicial.menu_inicial_Administrativo()
+                        Menu_inicial.menu_inicial_Administrativo(cuenta)
 
         if opc == "2":
             for sede in Sede.lista_sedes:
@@ -62,7 +62,7 @@ class Crear_Cuenta:
                         print("no tienes permiso para crear una cuenta en esta sede")
                         print()
                         from src.ui_main.Menu_inicial import Menu_inicial
-                        Menu_inicial.menu_inicial_Administrativo()
+                        Menu_inicial.menu_inicial_Administrativo(cuenta)
         if opc == "3":
             for sede in Sede.lista_sedes:
                 if sede.nombre == "MedPLus Bogota":
@@ -73,7 +73,7 @@ class Crear_Cuenta:
                         print("no tienes permiso para crear una cuenta en esta sede")
                         print()
                         from src.ui_main.Menu_inicial import Menu_inicial
-                        Menu_inicial.menu_inicial_Administrativo()
+                        Menu_inicial.menu_inicial_Administrativo(cuenta)
         if opc == "4":
             for sede in Sede.lista_sedes:
                 if sede in cuenta.sede:
@@ -83,11 +83,11 @@ class Crear_Cuenta:
                     print("no tienes permiso para crear una cuenta en esta sede")
                     print()
                     from src.ui_main.Menu_inicial import Menu_inicial
-                    Menu_inicial.menu_inicial_Administrativo()
+                    Menu_inicial.menu_inicial_Administrativo(cuenta)
 
         Gestor_Base.guardar_objeto(cuenta_creada)
         print()
         print("¡Registro exitoso!")
         print()
         from src.ui_main.Menu_inicial import Menu_inicial
-        Menu_inicial.menu_inicial_Administrativo()
+        Menu_inicial.menu_inicial_Administrativo(cuenta)

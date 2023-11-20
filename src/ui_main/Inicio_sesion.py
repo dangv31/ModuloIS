@@ -1,5 +1,4 @@
 from src.base_datos.Gestor_Base import Gestor_Base
-from src.gestor_aplicacion.Cuenta import Cuenta
 from src.ui_main.Menu_inicial import Menu_inicial
 
 class Inicio_sesion:
@@ -8,13 +7,13 @@ class Inicio_sesion:
         while True:
             print()
             correo_ingresado = input("Ingrese su correo: ")
-            contraseña_ingresada = input("Ingrese su contraseña: ")
+            contrasena_ingresada = input("Ingrese su contraseña: ")
 
             cuenta_encontrada = None
             lista_cuentas = Gestor_Base.lista_cuentas()
 
             for cuenta in lista_cuentas:
-                if cuenta.correo == correo_ingresado and cuenta.contraseña == contraseña_ingresada:
+                if cuenta.correo == correo_ingresado and cuenta.contraseña == contrasena_ingresada:
                     cuenta_encontrada = cuenta
                     break
 

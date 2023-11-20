@@ -1,7 +1,7 @@
 from src.base_datos.Gestor_Base import Gestor_Base
 from src.ui_main.Cambiar_Estado import Cambiar_Estado
 from src.ui_main.gestion_cuentas.Editar_Datos_Basicos_Cuenta import Editar_Datos_Basicos_Cuenta
-from src.ui_main.gestion_cuentas.Resetear_Contraseña import Resetear_Contraseña
+from src.ui_main.gestion_cuentas.Resetear_Contraseña import Resetear_Contrasena
 
 
 class Editar_Cuenta:
@@ -26,9 +26,9 @@ class Editar_Cuenta:
         if opcion == "1":
             Editar_Datos_Basicos_Cuenta.editar_datos_basicos(cuenta_e, cuenta, id)
         if opcion == "2":
-            Resetear_Contraseña.resetear_contraseña(cuenta_e, cuenta, id)
+            Resetear_Contrasena.resetear_contrasena(cuenta_e, cuenta, id)
         if opcion == "3":
             Cambiar_Estado.cambiar_estado(cuenta_e, cuenta, id)
         if opcion == "4":
             from src.ui_main.Menu_inicial import Menu_inicial
-            Menu_inicial.menu_inicial_Administrativo()
+            Menu_inicial.menu_inicial_Administrativo(cuenta)

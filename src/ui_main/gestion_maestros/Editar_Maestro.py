@@ -35,4 +35,4 @@ class Editar_Maestro:
             Cambiar_Estado.cambiar_estado(maestro, cuenta, id)
         if opcion == "4":
             from src.ui_main.Menu_inicial import Menu_inicial
-            Menu_inicial.menu_inicial_Administrativo()
+            Menu_inicial.menu_inicial_Administrativo(cuenta)

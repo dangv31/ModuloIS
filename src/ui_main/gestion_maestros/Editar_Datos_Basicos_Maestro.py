@@ -37,4 +37,4 @@ class Editar_Datos_Basicos_Maestro:
             return cls.editar_datos_basicos(maestro, cuenta, id)
         if opcion == "3":
             from src.ui_main.Menu_inicial import Menu_inicial
-            return Menu_inicial.menu_inicial_Administrativo()
+            return Menu_inicial.menu_inicial_Administrativo(cuenta)
