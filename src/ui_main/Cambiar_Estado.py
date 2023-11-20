@@ -12,5 +12,5 @@ class Cambiar_Estado:
             objeto.estado = True
         Observacion.generar_observacion(cuenta, objeto)
         if isinstance(objeto, Maestro):
-            Gestor_Base.actualizar_maestro(objeto, id)
+            Gestor_Base.actualizar_objeto(objeto, id)
         print("Cambio realizado con exito!")

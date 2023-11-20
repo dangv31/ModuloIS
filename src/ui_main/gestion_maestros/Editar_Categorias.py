@@ -24,7 +24,7 @@ class Editar_Categorias:
             categoria_seleccionada.actualizar_info(nueva_info, opcion_categoria - 1)
         Observacion.generar_observacion(cuenta, maestro)
         print("Cambios realizados con exito!")
-        Gestor_Base.actualizar_maestro(maestro, id)
+        Gestor_Base.actualizar_objeto(maestro, id)
         return cls.editar_categorias(maestro, cuenta, id)
 
     @classmethod
@@ -48,7 +48,7 @@ class Editar_Categorias:
                 opcion = int(opcion)
                 categoria_seleccionada = maestro.categorias[opcion - 1]
                 Cambiar_Estado.cambiar_estado(categoria_seleccionada, cuenta, id)
-            Gestor_Base.actualizar_maestro(maestro, id)
+            Gestor_Base.actualizar_objeto(maestro, id)
             return cls.editar_categorias(maestro, cuenta, id)
         if opcion == "3":
             informacion = []
@@ -57,7 +57,7 @@ class Editar_Categorias:
                 info = input("Ingrese la informacion de esta columna: ")
                 informacion.append(info)
             Categoria(informacion, maestro)
-            Gestor_Base.actualizar_maestro(maestro, id)
+            Gestor_Base.actualizar_objeto(maestro, id)
             return cls.editar_categorias(maestro, cuenta, id)
         if opcion == "4":
             from src.ui_main.Menu_inicial import Menu_inicial

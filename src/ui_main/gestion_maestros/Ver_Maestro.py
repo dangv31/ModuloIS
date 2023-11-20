@@ -5,7 +5,7 @@ class Ver_Maestro:
     @classmethod
     def ver_maestro(cls, cuenta):
         nombre_maestro = input("Ingrese el nombre del maestro que desee ver: ")
-        id, maestro = Gestor_Base.buscar_maestro(nombre_maestro)
+        id, maestro = Gestor_Base.buscar_objeto(nombre_maestro, "Maestro")
         print(f"Nombre: {maestro.nombre}")
         print("Columnas: ")
         for columna in maestro.columnas:

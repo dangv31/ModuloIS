@@ -17,7 +17,7 @@ class Editar_Datos_Basicos_Maestro:
             nombre_nuevo = input("Ingrese el nombre nuevo: ")
             maestro.nombre = nombre_nuevo
             Observacion.generar_observacion(cuenta, maestro)
-            Gestor_Base.actualizar_maestro(maestro, id)
+            Gestor_Base.actualizar_objeto(maestro, id)
             print("Cambio realizado con exito!")
             return cls.editar_datos_basicos(maestro, cuenta, id)
         if opcion == "2":
@@ -32,7 +32,7 @@ class Editar_Datos_Basicos_Maestro:
                 nombre_col = input(f"Ingrese el nombre nuevo de la columna {index_columna}: ")
                 columnas[index_columna - 1] = nombre_col
             Observacion.generar_observacion(cuenta, maestro)
-            Gestor_Base.actualizar_maestro(maestro, id)
+            Gestor_Base.actualizar_objeto(maestro, id)
             print("Cambio realizado con exito!")
             return cls.editar_datos_basicos(maestro, cuenta, id)
         if opcion == "3":
