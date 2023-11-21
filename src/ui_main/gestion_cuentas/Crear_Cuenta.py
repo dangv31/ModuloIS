@@ -28,15 +28,15 @@ class Crear_Cuenta:
             print("1. Administrativo")
             print("2. Clinico")
             print("3. Administrativo-Clinico")
-            opc = int(input("Seleccione el rol que tendrá el usuario: "))
-            if opc in [1, 2, 3]:
-                if opc == 1 and "Administrativo" in cuenta.rol:
+            opc = input("Seleccione el rol que tendrá el usuario: ")
+            if opc in ["1", "2", "3"]:
+                if opc == "1" and "Administrativo" in cuenta.rol:
                     cuenta_creada.rol.append("Administrativo")
                     break
-                elif opc == 2 and "Clinico" in cuenta.rol:
+                elif opc == "2" and "Clinico" in cuenta.rol:
                     cuenta_creada.rol.append("Clinico")
                     break
-                elif opc == 3 and "Administrativo" in cuenta.rol and "Clinico" in cuenta.rol:
+                elif opc == "3" and "Administrativo" in cuenta.rol and "Clinico" in cuenta.rol:
                     cuenta_creada.rol.append("Administrativo")
                     cuenta_creada.rol.append("Clinico")
                     break
@@ -51,9 +51,9 @@ class Crear_Cuenta:
                 print("2. Manizales")
                 print("3. Bogota")
                 print("4. Medellin-Manizales-Bogota")
-                opc = int(input("Seleccione la sede en donde estará el usuario: "))
-                if opc in [1, 2, 3, 4]:
-                    if opc == 1:
+                opc = input("Seleccione la sede en donde estará el usuario: ")
+                if opc in ["1", "2", "3", "4"]:
+                    if opc == "1":
                         id_sede, sede = Gestor_Base.buscar_objeto("MedPLus Medellin", "Sede")
                         if sede in cuenta.sede:
                             cuenta_creada.sede.append(sede)
@@ -64,7 +64,7 @@ class Crear_Cuenta:
                             print("no tienes permiso para crear una cuenta en esta sede")
                             print()
 
-                    if opc == 2:
+                    if opc == "2":
                         id_sede2, sede2 = Gestor_Base.buscar_objeto("MedPLus Manizales", "Sede")
                         if sede2 in cuenta.sede:
                             cuenta_creada.sede.append(sede2)
@@ -74,7 +74,7 @@ class Crear_Cuenta:
                         else:
                             print("no tienes permiso para crear una cuenta en esta sede")
                             print()
-                    if opc == 3:
+                    if opc == "3":
                         id_sede3, sede3 = Gestor_Base.buscar_objeto("MedPLus Bogota", "Sede")
                         if sede3 in cuenta.sede:
                             cuenta_creada.sede.append(sede3)
@@ -84,7 +84,7 @@ class Crear_Cuenta:
                         else:
                             print("no tienes permiso para crear una cuenta en esta sede")
                             print()
-                    if opc == 4:
+                    if opc == "4":
                         id_sede, sede = Gestor_Base.buscar_objeto("MedPLus Medellin", "Sede")
                         id_sede2, sede2 = Gestor_Base.buscar_objeto("MedPLus Manizales", "Sede")
                         id_sede3, sede3 = Gestor_Base.buscar_objeto("MedPLus Bogota", "Sede")

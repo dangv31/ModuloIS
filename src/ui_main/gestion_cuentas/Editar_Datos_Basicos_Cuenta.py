@@ -69,16 +69,16 @@ class Editar_Datos_Basicos_Cuenta:
                     print("1. Administrativo")
                     print("2. Clinico")
                     print("3. Administrativo-Clinico")
-                    opc = int(input("Seleccione el rol que tendrá el usuario: "))
+                    opc = input("Seleccione el rol que tendrá el usuario: ")
                     cuenta_e.rol.clean()
-                    if opc in [1, 2, 3]:
-                        if opc == 1 and "Administrativo" in cuenta.rol:
+                    if opc in ["1", "2", "3"]:
+                        if opc == "1" and "Administrativo" in cuenta.rol:
                             cuenta_e.rol.append("Administrativo")
                             break
-                        elif opc == 2 and "Clinico" in cuenta.rol:
+                        elif opc == "2" and "Clinico" in cuenta.rol:
                             cuenta_e.rol.append("Clinico")
                             break
-                        elif opc == 3 and "Administrativo" in cuenta.rol and "Clinico" in cuenta.rol:
+                        elif opc == "3" and "Administrativo" in cuenta.rol and "Clinico" in cuenta.rol:
                             cuenta_e.rol.append("Administrativo")
                             cuenta_e.rol.append("Clinico")
                             break
