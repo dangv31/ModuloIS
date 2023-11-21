@@ -4,8 +4,17 @@ from src.base_datos.Gestor_Base import Gestor_Base
 class Ver_Cuenta:
     @classmethod
     def ver_cuenta(cls, cuenta_principal):
-        doc = int(input("Ingrese el numero de documento de la cuenta que desea ver: "))
-        id, cuenta = Gestor_Base.buscar_objeto(doc, "Cuenta")
+        global doc
+        while True:
+            try:
+                doc = int(input("Ingrese el numero de documento de la cuenta: "))
+            except ValueError:
+                print("Error: Numero de documento debe ser un valor numérico. Intente de nuevo.")
+            id, cuenta = Gestor_Base.buscar_objeto(doc, "Cuenta")
+            if cuenta is None:
+                print("No existe una cuenta creada con este numero de documento")
+            else:
+                break
         print("Nombre:", cuenta.nombres)
         print("Apellido:",cuenta.apellidos)
         print("Numero de docmuento:",cuenta.doc)

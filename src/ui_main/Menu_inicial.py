@@ -9,17 +9,6 @@ from src.ui_main.gestion_sedes.Menu_Gestion_Sede import Menu_Gestion_Sede
 from src.ui_main.gestion_sedes.Ver_Lista_Sedes import Ver_Lista_Sedes
 from src.ui_main.gestion_sedes.Ver_Sede import Ver_Sede
 
-cuenta = Cuenta("Diego", "Gracia", 123, "12/08/2003", "dgraciag", "123")
-cuenta.rol.append("Administrativo")
-cuenta2 = Cuenta("Daniel", "Giraldo", 111, "12/08/2003", "dgiraldo", "111")
-cuenta2.rol.append("Clinico")
-sede = Sede("MedPLus Medellin", 100, 100, 100, "Medellin", 100, 100, 100, 100)
-sede2 = Sede("MedPLus Manizales", 100, 100, 100, "Manizales", 100, 100, 100, 100)
-sede3 = Sede("MedPLus Bogota", 100, 100, 100, "Bogota", 100, 100, 100, 100)
-cuenta.sede.append(sede)
-cuenta2.sede.append(sede2)
-Gestor_Base.guardar_objeto(cuenta2)
-
 class Menu_inicial:
     @classmethod
     def menu_inicial_Administrativo(cls, cuenta):
@@ -34,10 +23,13 @@ class Menu_inicial:
 
             if opcion == "1":
                 Menu_Gestion_Cuentas.menu_gestion_cuentas(cuenta)
+                break
             elif opcion == "2":
                 Menu_Gestion_Maestros.menu_gestion_maestros(cuenta)
+                break
             elif opcion == "3":
                 Menu_Gestion_Sede.menu_gestion_sede(cuenta)
+                break
             elif opcion == "4":
                 print("Saliendo...")
                 break
@@ -58,12 +50,16 @@ class Menu_inicial:
 
             if opcion == "1":
                 Ver_Maestro.ver_maestro(cuenta)
+                break
             elif opcion == "2":
                 Ver_Sede.ver_sede(cuenta)
+                break
             elif opcion == "3":
                 Ver_Lista_Maestros.ver_lista_maestros(cuenta)
+                break
             elif opcion == "4":
                 Ver_Lista_Sedes.ver_lista_sedes(cuenta)
+                break
             elif opcion == "5":
                 print("Saliendo...")
                 break
