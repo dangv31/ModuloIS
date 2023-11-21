@@ -5,7 +5,16 @@ class Ver_Sede:
     @classmethod
     def ver_sede(cls, cuenta):
         nombre_sede = input("Ingrese el nombre de la sede: ")
-        id, sede = Gestor_Base.buscar_objeto(nombre_sede, "Sede")
+        sede_l = Gestor_Base.buscar_objeto(nombre_sede, "Sede")
+        while True:
+            if sede_l == None:
+                print("Esa sede no existe")
+                from src.ui_main.Menu_inicial import Menu_inicial
+                return Menu_inicial.menu_inicial_Administrativo(cuenta)
+            else:
+                break
+        id = sede_l[0]
+        sede = sede_l[1]
         sede.imprimir_info()
         print("Observaciones: ")
         for observacion in sede.observaciones:
