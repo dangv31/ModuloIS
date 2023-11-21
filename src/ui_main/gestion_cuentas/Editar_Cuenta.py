@@ -7,17 +7,17 @@ from src.ui_main.gestion_cuentas.Resetear_Contraseña import Resetear_Contrasena
 class Editar_Cuenta:
     @classmethod
     def editar_cuenta(cls, cuenta):
-        global doc
         while True:
             try:
                 doc = int(input("Ingrese el numero de documento de la cuenta: "))
-                id, cuenta_e = Gestor_Base.buscar_objeto(doc, "Cuenta")
-                if cuenta_e is None:
+                busqueda = Gestor_Base.buscar_objeto(doc, "Cuenta")
+                if busqueda is None:
                     print("No existe una cuenta creada con este numero de documento")
                 else:
                     break
             except ValueError:
                 print("Error: Numero de documento debe ser un valor numérico. Intente de nuevo.")
+        id, cuenta_e = Gestor_Base.buscar_objeto(doc, "Cuenta")
         print(cuenta_e.nombres)
         print(cuenta_e.apellidos)
         print(cuenta_e.doc)
