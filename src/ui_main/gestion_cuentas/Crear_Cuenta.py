@@ -6,20 +6,19 @@ class Crear_Cuenta:
     @classmethod
     def crear_cuenta(cls, cuenta):
         global doc
-        print()
         print("Por favor, ingrese la siguiente informacion sobre el usuario a crear: ")
         nombre = input("Nombre: ")
         apellido = input("Apellido: ")
         while True:
             try:
                 doc = int(input("Numero de documento: "))
+                id, cuenta_e = Gestor_Base.buscar_objeto(doc, "Cuenta")
+                if cuenta_e is None:
+                    break
+                else:
+                    print("Ya hay una cuenta creada con este numero de documento")
             except ValueError:
                 print("Error: Numero de documento debe ser un valor numérico. Intente de nuevo.")
-            id, cuenta_e = Gestor_Base.buscar_objeto(doc, "Cuenta")
-            if cuenta_e is None:
-                break
-            else:
-                print("Ya hay una cuenta creada con este numero de documento")
 
         nacimiento = input("Fecha de nacimiento (DD/MM/AAAA): ")
         correo = input("correo: ")

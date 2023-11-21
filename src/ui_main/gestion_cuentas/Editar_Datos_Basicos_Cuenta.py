@@ -37,13 +37,14 @@ class Editar_Datos_Basicos_Cuenta:
                 while True:
                     try:
                         num_documento_nuevo = int(input("Ingrese el nuevo numero de documento: "))
+                        id, cuenta_e = Gestor_Base.buscar_objeto(num_documento_nuevo, "Cuenta")
+                        if cuenta_e is None:
+                            break
+                        else:
+                            print("Ya hay una cuenta creada con este numero de documento")
                     except ValueError:
                         print("Error: Numero de documento debe ser un valor numérico. Intente de nuevo.")
-                    id, cuenta_e = Gestor_Base.buscar_objeto(num_documento_nuevo, "Cuenta")
-                    if cuenta_e is None:
-                        break
-                    else:
-                        print("Ya hay una cuenta creada con este numero de documento")
+
                 cuenta_e.doc = num_documento_nuevo
                 Observacion.generar_observacion(cuenta, cuenta_e)
                 Gestor_Base.actualizar_objeto(cuenta_e, id)
