@@ -52,11 +52,12 @@ class Crear_Cuenta:
                 print("3. Bogota")
                 print("4. Medellin-Manizales-Bogota")
                 opc = input("Seleccione la sede en donde estará el usuario: ")
+                print()
                 if opc in ["1", "2", "3", "4"]:
                     if opc == "1":
                         id_sede, sede = Gestor_Base.buscar_objeto("MedPLus Medellin", "Sede")
-                        if sede in cuenta.sede:
-                            cuenta_creada.sede.append(sede)
+                        if "MedPLus Medellin" in cuenta.sede:
+                            cuenta_creada.sede.append("MedPLus Medellin")
                             sede.personal.append(cuenta_creada)
                             Gestor_Base.actualizar_objeto(sede, id_sede)
                             break
@@ -66,8 +67,8 @@ class Crear_Cuenta:
 
                     if opc == "2":
                         id_sede2, sede2 = Gestor_Base.buscar_objeto("MedPLus Manizales", "Sede")
-                        if sede2 in cuenta.sede:
-                            cuenta_creada.sede.append(sede2)
+                        if "MedPLus Manizales" in cuenta.sede:
+                            cuenta_creada.sede.append("MedPLus Manizales")
                             sede2.personal.append(cuenta_creada)
                             Gestor_Base.actualizar_objeto(sede2, id_sede2)
                             break
@@ -76,8 +77,8 @@ class Crear_Cuenta:
                             print()
                     if opc == "3":
                         id_sede3, sede3 = Gestor_Base.buscar_objeto("MedPLus Bogota", "Sede")
-                        if sede3 in cuenta.sede:
-                            cuenta_creada.sede.append(sede3)
+                        if "MedPLus Bogota" in cuenta.sede:
+                            cuenta_creada.sede.append("MedPLus Bogota")
                             sede3.personal.append(cuenta_creada)
                             Gestor_Base.actualizar_objeto(sede3, id_sede3)
                             break
@@ -88,14 +89,14 @@ class Crear_Cuenta:
                         id_sede, sede = Gestor_Base.buscar_objeto("MedPLus Medellin", "Sede")
                         id_sede2, sede2 = Gestor_Base.buscar_objeto("MedPLus Manizales", "Sede")
                         id_sede3, sede3 = Gestor_Base.buscar_objeto("MedPLus Bogota", "Sede")
-                        if sede in cuenta.sede and sede2 in cuenta.sede and sede3 in cuenta.sede:
-                            cuenta_creada.sede.append(sede)
+                        if "MedPLus Medellin" in cuenta.sede and "MedPLus Manizales" in cuenta.sede and "MedPLus Bogota" in cuenta.sede:
+                            cuenta_creada.sede.append("MedPLus Medellin")
                             sede.personal.append(cuenta_creada)
                             Gestor_Base.actualizar_objeto(sede, id_sede)
-                            cuenta_creada.sede.append(sede2)
+                            cuenta_creada.sede.append("MedPLus Manizales")
                             sede2.personal.append(cuenta_creada)
                             Gestor_Base.actualizar_objeto(sede2, id_sede2)
-                            cuenta_creada.sede.append(sede3)
+                            cuenta_creada.sede.append("MedPLus Bogota")
                             sede3.personal.append(cuenta_creada)
                             Gestor_Base.actualizar_objeto(sede3, id_sede3)
                             break

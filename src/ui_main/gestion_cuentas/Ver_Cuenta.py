@@ -30,7 +30,7 @@ class Ver_Cuenta:
             print("Estado: Deshabilitada")
         print("Sede:", end=" ")
         for sede in cuenta.sede:
-            print(sede.nombre, end=" ")
+            print(sede, end=" ")
         print()
 
         print()

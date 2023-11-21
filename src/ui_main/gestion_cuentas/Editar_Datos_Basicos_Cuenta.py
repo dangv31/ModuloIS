@@ -70,7 +70,7 @@ class Editar_Datos_Basicos_Cuenta:
                     print("2. Clinico")
                     print("3. Administrativo-Clinico")
                     opc = input("Seleccione el rol que tendrá el usuario: ")
-                    cuenta_e.rol.clean()
+                    cuenta_e.rol.clear()
                     if opc in ["1", "2", "3"]:
                         if opc == "1" and "Administrativo" in cuenta.rol:
                             cuenta_e.rol.append("Administrativo")
@@ -107,7 +107,7 @@ class Editar_Datos_Basicos_Cuenta:
                     sede3.personal.remove(cuenta_e)
                     Gestor_Base.actualizar_objeto(sede3, id_sede3)
 
-                cuenta_e.sede.clean()
+                cuenta_e.sede.clear()
 
                 while True:
                     print("1. Medellin")
@@ -116,37 +116,35 @@ class Editar_Datos_Basicos_Cuenta:
                     print("3. Medellin-Manizales-Bogota")
                     opc = input("seleccione la sede en donde estara el usuario: ")
                     if opc == "1":
-                        id_sede, sede = Gestor_Base.buscar_objeto("MedPLus Medellin", "Sede")
-                        cuenta_e.sede.append(sede)
-                        sede.personal.append(cuenta_e)
-                        Gestor_Base.actualizar_objeto(sede, id_sede)
-                        break
+                        if "MedPLus Medellin" in cuenta.sede:
+                            cuenta_e.sede.append("MedPLus Medellin")
+                            sede.personal.append(cuenta_e)
+                            Gestor_Base.actualizar_objeto(sede, id_sede)
+                            break
                     elif opc == "2":
-                        id_sede, sede = Gestor_Base.buscar_objeto("MedPLus Manizales", "Sede")
-                        cuenta_e.sede.append(sede)
-                        sede.personal.append(cuenta_e)
-                        Gestor_Base.actualizar_objeto(sede, id_sede)
-                        break
+                        if "MedPLus Manizales" in cuenta.sede:
+                            cuenta_e.sede.append("MedPLus Manizales")
+                            sede2.personal.append(cuenta_e)
+                            Gestor_Base.actualizar_objeto(sede2, id_sede2)
+                            break
                     elif opc == "3":
-                        id_sede, sede = Gestor_Base.buscar_objeto("MedPLus Bogota", "Sede")
-                        cuenta_e.sede.append(sede)
-                        sede.personal.append(cuenta_e)
-                        Gestor_Base.actualizar_objeto(sede, id_sede)
-                        break
+                        if "MedPLus Bogota" in cuenta.sede:
+                            cuenta_e.sede.append("MedPLus Bogota")
+                            sede3.personal.append(cuenta_e)
+                            Gestor_Base.actualizar_objeto(sede3, id_sede3)
+                            break
                     elif opc == "4":
-                        id_sede, sede = Gestor_Base.buscar_objeto("MedPLus Medellin", "Sede")
-                        cuenta_e.sede.append(sede)
-                        sede.personal.append(cuenta_e)
-                        Gestor_Base.actualizar_objeto(sede, id_sede)
-                        id_sede2, sede2 = Gestor_Base.buscar_objeto("MedPLus Manizales", "Sede")
-                        cuenta_e.sede.append(sede2)
-                        sede2.personal.append(cuenta_e)
-                        Gestor_Base.actualizar_objeto(sede2, id_sede2)
-                        id_sede3, sede3 = Gestor_Base.buscar_objeto("MedPLus Bogota", "Sede")
-                        cuenta_e.sede.append(sede3)
-                        sede3.personal.append(cuenta_e)
-                        Gestor_Base.actualizar_objeto(sede3, id_sede3)
-                        break
+                        if "MedPLus Medellin" in cuenta.sede and "MedPLus Manizales" in cuenta.sede and "MedPLus Bogota" in cuenta.sede:
+                            cuenta_e.sede.append("MedPLus Medellin")
+                            sede.personal.append(cuenta_e)
+                            Gestor_Base.actualizar_objeto(sede, id_sede)
+                            cuenta_e.sede.append("MedPLus Manizales")
+                            sede2.personal.append(cuenta_e)
+                            Gestor_Base.actualizar_objeto(sede2, id_sede2)
+                            cuenta_e.sede.append("MedPLus Bogota")
+                            sede3.personal.append(cuenta_e)
+                            Gestor_Base.actualizar_objeto(sede3, id_sede3)
+                            break
                     else:
                         print("Opción no válida. Por favor, seleccione una opción válida.")
                         print()

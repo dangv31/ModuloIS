@@ -18,15 +18,24 @@ class Inicio_sesion:
                     break
 
             if cuenta_encontrada:
-                if "Administrativo" in cuenta_encontrada.rol:
-                    print()
-                    print(f"¡Bienvenido {cuenta_encontrada.nombres}!")
-                    Menu_inicial.menu_inicial_Administrativo(cuenta_encontrada)
+                if cuenta_encontrada.estado:
+                    if "Administrativo" in cuenta_encontrada.rol:
+                        print()
+                        print(f"¡Bienvenido {cuenta_encontrada.nombres}!")
+                        Menu_inicial.menu_inicial_Administrativo(cuenta_encontrada)
+                    else:
+                        print()
+                        print(f"¡Bienvenido {cuenta_encontrada.nombres}!")
+                        Menu_inicial.menu_inicial_Clinico(cuenta_encontrada)
+                    break
                 else:
                     print()
-                    print(f"¡Bienvenido {cuenta_encontrada.nombres}!")
-                    Menu_inicial.menu_inicial_Clinico(cuenta_encontrada)
-                break
+                    print("Su cuenta esta deshabilitada")
+                    opcion = input("¿Desea intentarlo de nuevo? (s/n): ").lower()
+                    if opcion != 's':
+                        print("Saliendo del programa. ¡Hasta luego!")
+                        break
+
             else:
                 print()
                 print("Error: Correo o contraseña incorrectos.")
