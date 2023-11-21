@@ -12,15 +12,23 @@ class Menu_Gestion_Maestros:
         print("3. Ver Maestro")
         print("4. Ver Lista de Maestros")
         print("5. Volver al menu principal")
-        opcion = input("Seleccione una opcion: ")
-        if opcion == "1":
+        while True:
+            try:
+                opcion = int(input("Seleccione una opcion: "))
+                if 1 <= opcion <= 5:
+                    break
+                else:
+                    print("Ingrese un numero dentro del rango")
+            except ValueError:
+                print("Ingrese un numero")
+        if opcion == 1:
             Crear_Maestro.crear_maestro(cuenta)
-        if opcion == "2":
+        if opcion == 2:
             Editar_Maestro.editar_maestro(cuenta)
-        if opcion == "3":
+        if opcion == 3:
             Ver_Maestro.ver_maestro(cuenta)
-        if opcion == "4":
+        if opcion == 4:
             Ver_Lista_Maestros.ver_lista_maestros(cuenta)
-        if opcion == "5":
+        if opcion == 5:
             from src.ui_main.Menu_inicial import Menu_inicial
             Menu_inicial.menu_inicial_Administrativo(cuenta)
