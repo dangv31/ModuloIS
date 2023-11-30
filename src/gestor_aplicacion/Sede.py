@@ -28,4 +28,6 @@ class Sede:
         print("Camas:", self.camas)
         print("Ambulancias:", self.ambulancias)
         print("Estado: ", "habilitada" if self.estado else "deshabilitada")
+    def __str__(self):
+        return self.nombre
 
